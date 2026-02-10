@@ -152,11 +152,23 @@ img {
  border-radius: 50%;
  position: absolute;
  filter: blur(35px);
- z-index: 3;
+ z-index: -1;
+ animation: animateBlob 5s linear infinite;
 }
+
+ @keyframes animateBlob { 
+  0%{
+    transform:rotate(0);
+  }
+  100%{
+    transform:rotate(360deg);
+  }
+ }
+
+
 .header .blob-animate{
-  top: -1.5rem;
-  left:-1.5rem;
+  top: -3rem;
+  left:-3rem;
 }
 
 
@@ -196,10 +208,10 @@ span .nav__logo{
 
   font-family: var(--second-font);
   font-weight: var(--font-semi-bold);
-  color:black;
+  color:var(--title-color);
   align-self: flex-start;
   transition: color .4s;
-  padding: 1rem;
+ 
 
 }
 .nav__logo:hover{
@@ -213,7 +225,7 @@ span .nav__logo{
   row-gap: .5rem;
 }
 .nav__link{
-   color:black;
+   color:var(--title-color);
    font:var(--font-semi-bold)var(--small-font-size)var(--second-font);
    transition: color .4s, text-shadow .4s;
    padding: 1rem;

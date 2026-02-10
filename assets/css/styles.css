@@ -1,0 +1,436 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Unbounded:wght@200..900&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 3.5rem;
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  /* 
+         Change favorite color:
+
+         Default (Purple): hsl(255, 60%, 64%)
+         Blue: hsl(220, 60%, 64%) - Pink: hsl(300, 60%, 64%)
+         Green: hsl(110, 60%, 64%) - Cyan: hsl(180, 60%, 64%)
+         Orange: hsl(15, 60%, 64%) - Red: hsl(358, 60%, 64%)
+
+         For more colors visit: https://htmlcolorcodes.com/
+         -> Choose any color 
+         -> Copy the color mode (HSL)
+  */
+  --hue: 255;
+  --first-color: hsl(var(--hue), 60%, 64%);
+  --first-color-alt: hsl(var(--hue), 80%, 56%);
+  --first-color-alt-2: hsl(var(--hue), 60%, 56%);
+  --first-color-light: hsl(var(--hue), 60%, 74%);
+  --title-color: hsl(240, 8%, 95%);
+  --text-color: hsl(240, 8%, 70%);
+  --text-color-light: hsl(240, 8%, 50%);
+  --body-color: hsl(240, 100%, 2%);
+  --container-color: hsl(240, 8%, 6%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Montserrat", sans-serif;
+  --second-font: "Unbounded", sans-serif;
+  --biggest-font-size: 2rem;
+  --bigger-font-size: 1.75rem;
+  --h1-font-size: 1.5rem;
+  --h2-font-size: 1.25rem;
+  --h3-font-size: 1rem;
+  --normal-font-size: .938rem;
+  --small-font-size: .813rem;
+  --smaller-font-size: .75rem;
+
+  /*========== Font weight ==========*/
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1150px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --bigger-font-size: 2rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+    --smaller-font-size: .813rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background:url(../img/1.jpg) ;
+   background-size: 100vw 100vh;
+  background-repeat:repeat;
+   background-attachment: fixed
+  
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem 1rem;
+}
+
+.section__title {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  margin-bottom: 3rem;
+}
+
+.section__title span {
+  color: var(--first-color);
+}
+
+.main {
+  overflow: hidden;
+}
+
+/*=============== BLOB ===============*/
+/* Blob animate */
+.blob-animate{
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(180deg,
+              var(--first-color-alt)20%,
+              var(--first-color-light)100%);
+ border-radius: 50%;
+ position: absolute;
+ filter: blur(35px);
+ z-index: 3;
+}
+.header .blob-animate{
+  top: -1.5rem;
+  left:-1.5rem;
+}
+
+
+/* Blob */
+
+/*=============== CUSTOM CURSOR ===============*/
+
+
+/* Hide the custom cursor */
+
+
+/*=============== HEADER & NAV ===============*/
+.header{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(180deg,
+              lightgray 60%,
+              hsla(20,100%,2%,0)100%);
+  z-index: var(--z-fixed);
+}
+span .nav__logo{
+  position: fixed;
+  left: 1%;
+  top: 1%;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1rem;
+  align-items: center;
+}
+
+.nav__logo{
+
+  font-family: var(--second-font);
+  font-weight: var(--font-semi-bold);
+  color:black;
+  align-self: flex-start;
+  transition: color .4s;
+  padding: 1rem;
+
+}
+.nav__logo:hover{
+  color: var(--first-color);
+}
+.nav__list{
+ padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: .5rem;
+}
+.nav__link{
+   color:black;
+   font:var(--font-semi-bold)var(--small-font-size)var(--second-font);
+   transition: color .4s, text-shadow .4s;
+   padding: 1rem;
+}
+.nav__link:hover{
+  color:var(--first-color);
+  text-shadow: 0 8px 16px var(--first-color);
+}
+
+/* Active link */
+
+
+/*=============== HOME ===============*/
+.home{
+  position: relative;
+}
+.home__container{
+  position: relative;
+  padding-top: 1.7rem;
+  row-gap: 1rem;
+}
+.home__greetings{
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  font-weight: var(--font-regular);
+}
+.home__name{
+  font-size: var(--biggest-font-size);
+}
+.home__image{
+ display: grid;
+ overflow-y: clip;
+}
+.home__image img{
+  height: 50vh;
+  width: 100vw;
+}
+.home__image .blob-animate{
+  height: 280px;
+  width: 280px;
+  justify-self: center;
+  bottom: 0;
+  z-index:-1;
+}
+.home__prefil{
+  width: 320px;
+  justify-self: center;
+}
+.home__shadow, .home__info, .home__social, .home__cv{
+  position: absolute;
+}
+.home__shadow{
+  width: 100%;
+  height: 385px;
+  bottom: 0rem;
+  z-index: 1;
+  background: linear-gradient(180deg,
+              hsla(0, 0%, 85%, 0)60%,
+              rgb(215, 215, 215) 85%);
+}
+.home__info{
+  color: black;
+  z-index: 999;
+  justify-self: center;
+  bottom: -1rem ;
+}
+.home__split{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-regular);
+  color: var(--first-color);
+}
+.home__proffession-1, .home__proffession-2{
+  font-size: var(--bigger-font-size);
+  text-align: center;
+  overflow: hidden;
+  font-weight: 900;
+}
+.home__proffession-1{
+  position: relative;
+  color: var(--first-color);
+}
+.home__proffession-1::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,
+              hsla(0, 0%, 85%, 0)60%,
+              lightgray 85%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.home__proffession-2{
+  transform: translateY(-0.7rem);
+}
+.home__social{
+  z-index: 2;
+  left: 0%;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  row-gap: .75rem;
+}
+.home__social-link{
+  color: black;
+  font-size: 1.25rem;
+  transition: transform .4s, color .4s;
+}
+.home__social-link:hover{
+  color: var(--first-color);
+  transform: translateX(.25rem);
+}
+.home__cv{
+  z-index: 2;
+  color:black;
+  right: -1rem;
+  bottom: 2rem;
+  rotate: -90deg;
+  font: var(--font-medium), var(--small-font-size), var(--second-font);
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  transition: color .4s;
+}
+
+/*=============== BUTTON ===============*/
+
+
+/*=============== ABOUT ===============*/
+
+
+/*=============== PROJECTS ===============*/
+
+
+/* Swiper class */
+
+
+/*=============== WORK ===============*/
+
+
+/* Show & hide sections */
+
+
+/* Active tab */
+
+
+/*=============== SERVICES ===============*/
+
+
+/* Hide services info */
+
+
+/* Rotate icon */
+
+
+/*=============== TESTIMONIALS ===============*/
+
+
+/* Infinite scroll animation */
+
+
+/*=============== CONTACT ===============*/
+
+
+/*=============== FOOTER ===============*/
+
+
+/*=============== SCROLL BAR ===============*/
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width : 320px){
+  .container{
+    margin-inline: 1rem;
+    
+  }
+}
+
+
+/* For medium devices */
+
+
+/* For large devices */
+@media  screen and (min-width : 1150px) {
+ 
+  .container{
+    margin-inline: auto;
+  }
+  .nav{
+    height: calc(var(--header-height) + 2rem);
+    align-items: center;
+  }
+  .nav__logo{
+    align-self: initial;
+  }
+  .nav__list{
+    position: relative;
+    right: 1rem;
+    flex-direction: row;
+    column-gap: 3rem;
+  }
+  span .nav__logo{
+  position: relative;
+  margin-right: 60rem;
+  right: 60%;
+  top: 1%;
+}
+.home__image img{
+  margin-left: 100%;
+}
+}
+
+/* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+
+
+/* Custom cursor is hidden for mobile devices */

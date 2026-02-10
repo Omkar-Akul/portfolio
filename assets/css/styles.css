@@ -244,8 +244,8 @@ span .nav__logo{
 }
 .home__container{
   position: relative;
-  padding-top: 1.7rem;
-  row-gap: 1rem;
+  padding-top: 4rem;
+  row-gap: 3rem;
 }
 .home__greetings{
   font-size: var(--h2-font-size);
@@ -253,6 +253,7 @@ span .nav__logo{
   font-weight: var(--font-regular);
 }
 .home__name{
+  color: white;
   font-size: var(--biggest-font-size);
 }
 .home__image{
@@ -260,12 +261,12 @@ span .nav__logo{
  overflow-y: clip;
 }
 .home__image img{
-  height: 50vh;
-  width: 100vw;
+  height: 40vh;
+  width: 70vw;
 }
 .home__image .blob-animate{
-  height: 280px;
-  width: 280px;
+  height: 200px;
+  width: 200px;
   justify-self: center;
   bottom: 0;
   z-index:-1;
@@ -279,16 +280,16 @@ span .nav__logo{
 }
 .home__shadow{
   width: 100%;
-  height: 385px;
-  bottom: 0rem;
+  height: 400px;
+  bottom: 1rem;
   z-index: 1;
   background: linear-gradient(180deg,
-              hsla(0, 0%, 85%, 0)60%,
-              rgb(215, 215, 215) 85%);
+              hsla(240, 100%, 2%, 0)60%,
+              hsl(240, 100%, 2%) 85%);
 }
 .home__info{
-  color: black;
-  z-index: 999;
+  color: var(--first-color);
+  z-index: 2;
   justify-self: center;
   bottom: -1rem ;
 }
@@ -313,7 +314,7 @@ span .nav__logo{
   height: 100%;
   background: linear-gradient(180deg,
               hsla(0, 0%, 85%, 0)60%,
-              var(--body-color) 85%);
+              hsla(0, 0% ,0%, 0) 85%);
   position: absolute;
   top: 0;
   left: 0;
@@ -330,7 +331,7 @@ span .nav__logo{
   row-gap: .75rem;
 }
 .home__social-link{
-  color: black;
+  color: white;
   font-size: 1.25rem;
   transition: transform .4s, color .4s;
 }
@@ -338,9 +339,10 @@ span .nav__logo{
   color: var(--first-color);
   transform: translateX(.25rem);
 }
+
 .home__cv{
   z-index: 2;
-  color:black;
+  color:white;
   right: -1rem;
   bottom: 2rem;
   rotate: -90deg;

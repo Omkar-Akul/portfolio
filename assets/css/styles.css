@@ -261,12 +261,12 @@ span .nav__logo{
  overflow-y: clip;
 }
 .home__image img{
-  height: 40vh;
-  width: 70vw;
+  height: 50vh;
+  width: 100vw;
 }
 .home__image .blob-animate{
-  height: 200px;
-  width: 200px;
+  height: 280px;
+  width: 280px;
   justify-self: center;
   bottom: 0;
   z-index:-1;

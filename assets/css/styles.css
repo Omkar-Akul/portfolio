@@ -280,7 +280,7 @@ span .nav__logo{
 }
 .home__shadow{
   width: 100%;
-  height: 360px;
+  height: 36px;
   bottom: 1rem;
   z-index: 1;
   background: linear-gradient(180deg,

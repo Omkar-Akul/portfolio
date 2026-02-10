@@ -268,7 +268,7 @@ span .nav__logo{
   height: 280px;
   width: 280px;
   justify-self: center;
-  bottom: 0;
+  bottom: 30px;
   z-index:-1;
 }
 .home__prefil{
@@ -280,7 +280,7 @@ span .nav__logo{
 }
 .home__shadow{
   width: 100%;
-  height: 400px;
+  height: 360px;
   bottom: 1rem;
   z-index: 1;
   background: linear-gradient(180deg,

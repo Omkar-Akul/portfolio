@@ -192,9 +192,10 @@ img {
   z-index: var(--z-fixed);
 }
 span .nav__logo{
-  position: fixed;
-  left: 1%;
-  top: 1%;
+  /* position: fixed; */
+  /* left: 1%; */
+  /* top: 1%; */
+  display: block;
 }
 
 .nav{
@@ -449,22 +450,33 @@ span .nav__logo{
     column-gap: 3rem;
   }
   span .nav__logo{
-  position: relative;
-  margin-right: 60rem;
-  right: 20%;
-  top: 1%;
+  /* position: relative; */ /* Removed relative positioning */
+  /* margin-right: 60rem; */ /* Removed magic number margin */
+  /* right: 20%; */ /* Removed percentage positioning */
+  /* top: 1%; */ /* Removed percentage positioning */
+  display: flex; /* Use flexbox for better control */
+  margin-right: auto; /* Push logo to the left if needed, or adjust based on layout */
 }
-.home__image img{
+
+.home__image img {
+  /* Positioning */
+  position: relative;
+  top: 0;
+  left: 22%; /* Consider using flex/grid gap instead of percentage positioning */
   margin-left: 1%;
+
+  /* Dimensions & Display */
+  width: 40vw;
+  max-width: 100%; /* Ensure responsiveness */
+  height: auto;
+  max-height: 560px;
+  object-fit: cover;
+  display: block; /* Removes bottom spacing for inline-block elements */
 }
 .home__container{
   width: initial;
   padding-top: 3rem;
-}
-.home__image{
-  position: absolute;
-  top: 30%;
-  left: 30%;
+
 }
 }
 

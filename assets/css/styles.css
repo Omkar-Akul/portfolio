@@ -451,11 +451,11 @@ span .nav__logo{
   span .nav__logo{
   position: relative;
   margin-right: 60rem;
-  right: 60%;
+  right: 20%;
   top: 1%;
 }
 .home__image img{
-  margin-left: 100%;
+  margin-left: 1%;
 }
 .home__container{
   width: initial;

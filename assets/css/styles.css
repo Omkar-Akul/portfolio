@@ -424,6 +424,11 @@ span .nav__logo{
   }
 }
 
+@media screen and (min-width:768px){
+  .home__container{
+    width: 600px;
+  }
+}
 /* For large devices */
 @media  screen and (min-width : 1150px) {
  
@@ -451,6 +456,15 @@ span .nav__logo{
 }
 .home__image img{
   margin-left: 100%;
+}
+.home__container{
+  width: initial;
+  padding-top: 3rem;
+}
+.home__image{
+  position: absolute;
+  top: 30%;
+  left: 30%;
 }
 }
 
